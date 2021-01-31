@@ -1,1 +1,1 @@
-koa-prisma-template
+A Template for a Website Project using Koa as a Web Framework and Prisma as a Database Helper.
