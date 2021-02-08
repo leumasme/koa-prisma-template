@@ -3,9 +3,11 @@ import bodyParser from "koa-bodyparser";
 import cors from "koa2-cors";
 import logger from "koa-logger";
 
-const app = new Koa();
+import { config } from "./config";
 
-const PORT = process.env.PORT || 7654;
+import helloRoutes from "./routes/hello";
+
+const app = new Koa();
 
 app.use(bodyParser());
 app.use(
@@ -15,26 +17,11 @@ app.use(
 );
 app.use(logger());
 
-// NEW STUFF BELOW
-import Router from "koa-router";
-const router = new Router();
-
-router.get(`/`, async (ctx) => {
-  try {
-    ctx.body = {
-      status: "success",
-    };
-  } catch (err) {
-    console.error(err);
-  }
-});
-
-app.use(router.routes());
-// NEW STUFF ABOVE
+app.use(helloRoutes.routes());
 
 const server = app
-  .listen(PORT, async () => {
-    console.log(`Server listening on port: ${PORT}`);
+  .listen(config.port, async () => {
+    console.log(`Server listening on port: ${config.port}`);
   })
   .on("error", (err) => {
     console.error(err);
