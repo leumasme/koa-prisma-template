@@ -1,7 +1,7 @@
 import Router from "koa-router";
 const router = new Router();
 
-router.get(`/ping`, async (ctx) => {
+router.get(`/hello`, async (ctx) => {
   try {
     ctx.body = {
       status: "success",
