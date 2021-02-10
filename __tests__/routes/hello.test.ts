@@ -3,8 +3,7 @@ import request from "supertest";
 
 // close the server after each test
 afterEach((done) => {
-  server.close();
-  done();
+  server.close(done);
 });
 
 describe("routes/hello", () => {
