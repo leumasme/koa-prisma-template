@@ -32,7 +32,8 @@
     "build": "tsc --build",
     "start": "ts-node-dev src/server.ts",
     "test": "jest",
-    "test:watch": "npm run test -- --watchAll"
+    "test:watch": "npm run test -- --watchAll",
+    "clean": "del build /Q"
   },
   "author": "Temm",
   "license": "ISC",
