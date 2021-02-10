@@ -33,7 +33,7 @@
     "start": "nodemon --watch 'src/**/*.ts' --exec 'tsc",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
-    "clean": "del build /Q"
+    "clean": "del build /Q /S"
   },
   "author": "Temm",
   "license": "ISC",
