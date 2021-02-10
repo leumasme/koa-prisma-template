@@ -11,7 +11,6 @@ router
       typeof ctx.request.body.data != "string"
     ) {
       ctx.throw("Invalid Body", 400);
-      return;
     }
 
     elems.push(ctx.request.body.data);
