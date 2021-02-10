@@ -19,4 +19,4 @@ app.use(logger());
 app.use(helloRoutes.routes());
 app.use(listRoutes.routes());
 
-export = app;
+export default app;
