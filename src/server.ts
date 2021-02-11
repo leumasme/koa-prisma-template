@@ -1,5 +1,15 @@
 import { config } from "./config";
 import app from "./app";
+import * as listStorage from "./storage/list";
+
+(async () => {
+  await listStorage.createListElement("Hello, list!");
+  await listStorage.createListElement("Hi, Prisma!");
+
+  let elems = await listStorage.getListElements();
+
+  console.log(elems);
+})();
 
 console.log("Running...");
 

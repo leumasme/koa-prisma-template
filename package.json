@@ -4,6 +4,7 @@
   "description": "A Template for Projects using Koa with Prisma",
   "main": "index.js",
   "dependencies": {
+    "@prisma/client": "^2.16.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-logger": "^3.2.1",
@@ -23,6 +24,7 @@
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
+    "prisma": "^2.16.1",
     "supertest": "^6.1.3",
     "ts-jest": "^26.5.0",
     "ts-node-dev": "^1.1.1",
