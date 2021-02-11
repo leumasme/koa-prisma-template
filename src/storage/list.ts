@@ -1,8 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-console.log("Inside Prisma...");
-
 async function createListElement(name: string) {
   await prisma.listElement.create({
     data: {
@@ -21,4 +19,8 @@ async function getListElements(): Promise<string[]> {
   ).map((e) => e.title);
 }
 
-export { createListElement, getListElements };
+async function clearList() {
+  await prisma.listElement.deleteMany();
+}
+
+export { createListElement, getListElements, clearList };
