@@ -1,4 +1,6 @@
 import Router from "koa-router";
+import * as list from "../storage/list";
+
 const router = new Router();
 
 var elems: string[] = [];
@@ -13,7 +15,7 @@ router
       ctx.throw("Invalid Body", 400);
     }
 
-    elems.push(ctx.request.body.data);
+    await list.createListElement(ctx.request.body.data);
 
     ctx.body = {
       success: true,
@@ -23,7 +25,7 @@ router
   .get(`/list`, async (ctx) => {
     ctx.body = {
       success: true,
-      data: elems,
+      data: await list.getListElements(),
     };
   });
 
