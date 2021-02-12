@@ -37,6 +37,7 @@
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
     "clean": "del build /Q /S",
+    "clean:db": "prisma migrate reset --preview-feature",
     "rebuild": "npm run clean && npm run prepare && npm run build"
   },
   "author": "Temm",
