@@ -18,14 +18,19 @@ router
     await list.createListElement(ctx.request.body.data);
 
     ctx.body = {
-      success: true,
+      timestamp: new Date().getTime(),
     };
     ctx.status = 201;
   })
   .get(`/list`, async (ctx) => {
     ctx.body = {
-      success: true,
-      data: await list.getListElements(),
+      elements: await list.getListElements(),
+    };
+  })
+  .delete(`/list`, async (ctx) => {
+    await list.clearList();
+    ctx.body = {
+      timestamp: new Date().getTime(),
     };
   });
 

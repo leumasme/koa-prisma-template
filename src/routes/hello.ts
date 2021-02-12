@@ -3,8 +3,7 @@ const router = new Router();
 
 router.get(`/hello`, async (ctx) => {
   ctx.body = {
-    status: "success",
-    data: "hello",
+    message: "hello",
   };
 });
 

@@ -6,7 +6,7 @@ describe("routes/hello", () => {
     const response = await request(server.callback()).get("/hello");
     expect(response.status).toEqual(200);
     expect(response.type).toEqual("application/json");
-    expect(response.body.status).toEqual("success");
-    expect(response.body.data).toEqual("hello");
+    expect(response.body.success).toEqual(true);
+    expect(response.body.data.message).toEqual("hello");
   });
 });
