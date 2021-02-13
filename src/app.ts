@@ -5,7 +5,6 @@ import logger from "koa-logger";
 
 import helloRoutes from "./routes/hello";
 import listRoutes from "./routes/list";
-import { cwd } from "process";
 
 const app = new Koa();
 
