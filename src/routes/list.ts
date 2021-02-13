@@ -12,7 +12,7 @@ router
       ctx.request.body == undefined ||
       typeof ctx.request.body.data != "string"
     ) {
-      ctx.throw("Invalid Body", 400);
+      ctx.throw(400, "Invalid Body");
     }
 
     await list.createListElement(ctx.request.body.data);
