@@ -36,7 +36,7 @@
     "start": "ts-node-dev src/server.ts",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
-    "db:build": "npx prisma db push --preview-feature",
+    "db:build": "npx prisma db push",
     "db:commit": "npx prisma migrate dev --preview-feature",
     "db:clean": "prisma migrate reset --preview-feature",
     "clean": "del build /Q /S",
