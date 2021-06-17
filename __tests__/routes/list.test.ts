@@ -3,8 +3,7 @@ import request from "supertest";
 import { clearList } from "./../../src/storage/list";
 
 const agent = request.agent(app.callback());
-// Types for supertest are incomplete https://github.com/DefinitelyTyped/DefinitelyTyped/issues/51213
-(<any>agent).host("dev.demodomain.local");
+agent.host("dev.demodomain.local");
 
 beforeAll((done) => {
   clearList().then(done);
