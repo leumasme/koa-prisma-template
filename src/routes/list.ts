@@ -6,7 +6,7 @@ const router = new Router();
 var elems: string[] = [];
 
 router
-  .post(`/list`, async (ctx) => {
+  .post(`/list`, async (ctx: any) => {
     if (
       ctx.request.body == null ||
       ctx.request.body == undefined ||
